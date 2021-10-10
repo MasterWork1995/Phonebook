@@ -1,24 +1,26 @@
-import React from "react";
-import { ToastContainer } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
-import Container from "./Components/Container";
-import Section from "./Components/Section";
-import ContactForm from "./Components/ContactForm";
-import Filter from "./Components/Filter";
-import ContactsList from "./Components/ContactList";
+import React from 'react';
+import { Switch, Route } from 'react-router-dom';
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import Container from './Components/Container';
+import { AppBar } from './Components/AppBar/AppBar';
+import { Suspense } from 'react';
+import { HomePage } from './pages/HomePage';
+import { RegistrationPage } from './pages/RegistrationPage';
+import { LoginPage } from './pages/LoginPage';
+import { ContactsPage } from './pages/ContactsPage';
 
 const App = () => {
   return (
     <>
+      <AppBar />
       <Container>
-        <Section title="My Phonebook">
-          <ContactForm />
-        </Section>
-
-        <Section title="My Contacts">
-          <Filter />
-          <ContactsList />
-        </Section>
+        <Switch>
+          <Route exact path="/" component={HomePage} />
+          <Route path="/registration" component={RegistrationPage} />
+          <Route path="/login" component={LoginPage} />
+          <Route path="/contacts" component={ContactsPage} />
+        </Switch>
       </Container>
       <ToastContainer autoClose={3000} />
     </>
