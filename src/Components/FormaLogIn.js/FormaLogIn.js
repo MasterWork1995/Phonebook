@@ -1,8 +1,11 @@
 import { useState } from 'react';
+import { useDispatch } from 'react-redux';
+import { authOperations } from '../../redux/auth';
 import shortid from 'shortid';
 import s from './FormaLogIn.module.css';
 
 export const FormaLogIn = () => {
+  const dispatch = useDispatch();
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
@@ -19,6 +22,7 @@ export const FormaLogIn = () => {
 
   const handleSubmit = e => {
     e.preventDefault();
+    dispatch(authOperations.logIn({ email, password }));
     setEmail('');
     setPassword('');
   };

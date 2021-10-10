@@ -1,8 +1,11 @@
 import { useState } from 'react';
+import { useDispatch } from 'react-redux';
+import { authOperations } from '../../redux/auth';
 import shortid from 'shortid';
 import s from './FormaRegistration.module.css';
 
 export const FormaRegistration = () => {
+  const dispatch = useDispatch();
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -22,6 +25,7 @@ export const FormaRegistration = () => {
 
   const handleSubmit = e => {
     e.preventDefault();
+    dispatch(authOperations.register({ name, email, password }));
     setEmail('');
     setPassword('');
     setName('');
