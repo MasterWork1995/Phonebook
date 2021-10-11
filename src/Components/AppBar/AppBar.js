@@ -9,7 +9,6 @@ import s from './AppBar.module.css';
 
 export const AppBar = () => {
   const isLoggedIn = useSelector(authSelectors.getIsLoggedIn);
-  console.log(isLoggedIn);
   return (
     <div className={s.headerSection}>
       <Container>

@@ -11,6 +11,18 @@ const token = {
   },
 };
 
+const getContacts = () => {
+  return axios.get('/contacts').then(({ data }) => data);
+};
+
+const addContact = contact => {
+  return axios.post('/contacts', contact).then(({ data }) => data);
+};
+
+const deleteContact = id => {
+  return axios.delete(`/contacts/${id}`);
+};
+
 const registerNewUser = async credentials => {
   return axios.post('/users/signup', credentials).then(({ data }) => {
     token.set(data.token);
@@ -31,6 +43,9 @@ const logOutUser = () => {
 };
 
 const contactsAPI = {
+  getContacts,
+  addContact,
+  deleteContact,
   registerNewUser,
   logInUser,
   logOutUser,
