@@ -1,6 +1,6 @@
 body {
-  font-family: "DM Serif Display", serif;
-  background-image: url("./img/note.jpg");
+  font-family: 'DM Serif Display', serif;
+  background-image: url('./img/note.jpg');
   background-size: cover;
   background-repeat: no-repeat;
   min-height: 100vh;
@@ -9,7 +9,7 @@ body {
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
 
@@ -57,4 +57,8 @@ img {
     opacity: 0;
     transform: translateX(-200px);
   }
+}
+
+.loading {
+  text-align: center;
 }

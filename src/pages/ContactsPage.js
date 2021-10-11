@@ -3,7 +3,7 @@ import ContactList from '../Components/ContactList';
 import Filter from '../Components/Filter';
 import Section from '../Components/Section';
 
-export const ContactsPage = () => {
+const ContactsPage = () => {
   return (
     <>
       <Section title="Add contact">
@@ -16,3 +16,5 @@ export const ContactsPage = () => {
     </>
   );
 };
+
+export default ContactsPage;
