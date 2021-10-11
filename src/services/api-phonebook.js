@@ -42,6 +42,11 @@ const logOutUser = () => {
   token.unset();
 };
 
+const getCurrentUser = persistedToken => {
+  token.set(persistedToken);
+  return axios.get('users/current').then(({ data }) => data);
+};
+
 const contactsAPI = {
   getContacts,
   addContact,
@@ -49,6 +54,7 @@ const contactsAPI = {
   registerNewUser,
   logInUser,
   logOutUser,
+  getCurrentUser,
 };
 
 export default contactsAPI;
